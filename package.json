@@ -1,0 +1,11 @@
+{
+  "name": "form_fabric",
+  "version": "1.0.0",
+  "description": "Basic form fabric with custom validation",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Artiom Oganesyan",
+  "license": "MIT"
+}
