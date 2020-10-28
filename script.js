@@ -1,41 +1,6 @@
-const form = document.getElementById('form');
+import { config } from './config.js';
 
-// CONFIG
-// Here you can ADD fields to your form
-// ID is mandatory
-const config = {
-  method: 'post',
-  action: 'user/login',
-  fields: [
-    {
-      id: 'username',
-      labelText: 'Username',
-      placeholder: 'Your Username',
-      required: true,
-      max: 10,
-    },
-    {
-      id: 'password',
-      labelText: 'Password',
-      placeholder: 'Password',
-      type: 'password',
-      required: true,
-      min: 6,
-      max: 12,
-    },
-    {
-      id: 'email',
-      type: 'email',
-      labelText: 'Email',
-    },
-    {
-      id: 'emailTypeText',
-      labelText: 'Email',
-      placeholder: 'input type text',
-      isEmail: true,
-    },
-  ],
-};
+const form = document.getElementById('form');
 
 if ('content' in document.createElement('template')) {
   const template = document.getElementById('formControl');
@@ -55,9 +20,6 @@ if ('content' in document.createElement('template')) {
     children[1].id = field.id;
     children[1].placeholder = field.placeholder || '';
 
-    // small
-    // children[2].innerHTML = '';
-
     form.appendChild(div.cloneNode(true));
 
     // Adding confirm password input
@@ -70,9 +32,6 @@ if ('content' in document.createElement('template')) {
       children[1].type = 'password';
       children[1].id = `${field.id}2`;
       children[1].placeholder = field.placeholder || '';
-
-      // small
-      // children[2].innerHTML = '';
 
       form.appendChild(div.cloneNode(true));
     }
@@ -196,7 +155,7 @@ form.addEventListener('submit', (e) => {
     //   }
     // );
 
-    fetch('https://jsonplaceholder.typicode.com/users', {
+    fetch(config.action, {
       method: config.method,
       body: JSON.stringify(body),
     })
