@@ -1,24 +1,24 @@
 // CONFIG
 // Here you can ADD fields to your form
 // ID is mandatory
-interface IField{
-id:string,
-labelText?: string,
-placeholder?: string,
-type?: string,
-required?: boolean,
-isEmail?: boolean,
-min?: number,
-max?: number
-}
+// interface IField{
+// id:string,
+// labelText?: string,
+// placeholder?: string,
+// type?: string,
+// required?: boolean,
+// isEmail?: boolean,
+// min?: number,
+// max?: number
+// }
 
-interface IForm{
-    method?: string
-    action: string
-    fields?: Array<IField>
-}
+// interface IForm{
+//     method?: string
+//     action: string
+//     fields?: Array<IField>
+// }
 
-export const config:IForm = {
+export const config = {
     method: 'post',
     action: 'https://jsonplaceholder.typicode.com/users',
     fields: [
